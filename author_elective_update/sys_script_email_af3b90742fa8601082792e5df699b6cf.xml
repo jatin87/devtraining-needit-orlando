@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="DELETE">
+        <name/>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+          // Add your code here
+	
+	var today = new GlideDateTime();
+	var overDueTasks = new GlideRecord('x_58872_needit_needit_task');
+	overDueTasks.addQuery('due_date','<', today);
+	overDueTasks.addQuery('state','!=', 3);
+	overDueTasks.addQuery('assigned_to',current.assigned_to);
+	overDueTasks.query();
+	var count = overdueNITasks.getRowCount();
+	if(count > 1){
+		template.print('Total number of overdue tasks assigned to you are : ' + overDueTasks.getRowCount());
+	}
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-15 09:47:05</sys_created_on>
+        <sys_id>af3b90742fa8601082792e5df699b6cf</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_email_af3b90742fa8601082792e5df699b6cf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-15 09:49:57</sys_updated_on>
+    </sys_script_email>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>54779769db3cd810e03ad7c8f4961963</instance_id>
+        <instance_name>dev103561</instance_name>
+        <name>sys_script_email_af3b90742fa8601082792e5df699b6cf</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_email"&gt;&lt;sys_script_email action="INSERT_OR_UPDATE"&gt;&lt;name/&gt;&lt;new_lines_to_html&gt;false&lt;/new_lines_to_html&gt;&lt;script&gt;&lt;![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+          // Add your code here
+	
+	var today = new GlideDateTime();
+	var overDueTasks = new GlideRecord('x_58872_needit_needit_task');
+	overDueTasks.addQuery('due_date','&lt;', today);
+	overDueTasks.addQuery('state','!=', 3);
+	overDueTasks.addQuery('assigned_to',current.assigned_to);
+	overDueTasks.query();
+	var count = overdueNITasks.getRowCount();
+	if(count &gt; 1){
+		template.print('Total number of overdue tasks assigned to you are : ' + overDueTasks.getRowCount());
+	}
+
+})(current, template, email, email_action, event);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_email&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-11-15 09:47:05&lt;/sys_created_on&gt;&lt;sys_id&gt;af3b90742fa8601082792e5df699b6cf&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_email_af3b90742fa8601082792e5df699b6cf&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-11-15 09:49:57&lt;/sys_updated_on&gt;&lt;/sys_script_email&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>432151460</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>74872bd32f50201082792e5df699b64c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-15 09:49:57</sys_created_on>
+        <sys_id>dc0c90f42fa8601082792e5df699b648</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>175cb4faa630000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-15 09:49:57</sys_updated_on>
+        <type>Email Script</type>
+        <update_guid>180c90f4e1a860105c381ee1a6217d48</update_guid>
+        <update_guid_history>180c90f4e1a860105c381ee1a6217d48:432151460,f1ab9cb44ba860101b158bf2c3faf426:1924438337,088b94b4daa860109b44836e82c158c0:1065564205,125bd4b405a86010a7fa79147154c243:-516787860</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-15 09:51:34</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_email">sys_script_email</sys_db_object>
+        <sys_id>0ddc7e6fbff54cb49dba23c851e6d304</sys_id>
+        <sys_metadata>af3b90742fa8601082792e5df699b6cf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_script_email_af3b90742fa8601082792e5df699b6cf</sys_update_name>
+        <sys_update_version display_value="sys_script_email_af3b90742fa8601082792e5df699b6cf">dc0c90f42fa8601082792e5df699b648</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-15 09:51:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

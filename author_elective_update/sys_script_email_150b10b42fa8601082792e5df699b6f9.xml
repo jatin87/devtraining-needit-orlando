@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="DELETE">
+        <name/>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+          // Add your code here
+	
+	var today = new GlideDateTime();
+	var overDueTasks = new GlideRecord('x_58872_needit_needit_task');
+	overDueTasks.addQuery('due_date','<', today);
+	overDueTasks.addQuery('state','!=', 3);
+	overDueTasks.addQuery('assigned_to',current.assigned_to);
+	overDueTasks.query();
+	if(overDueTasks.getRowCount() <= 1) {
+	template.print('Total number of overdue tasks assigned to you are : ' + overDueTasks.getRowCount());
+	}
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-15 09:46:20</sys_created_on>
+        <sys_id>150b10b42fa8601082792e5df699b6f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_email_150b10b42fa8601082792e5df699b6f9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-15 09:46:20</sys_updated_on>
+    </sys_script_email>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>54779769db3cd810e03ad7c8f4961963</instance_id>
+        <instance_name>dev103561</instance_name>
+        <name>sys_script_email_150b10b42fa8601082792e5df699b6f9</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_email"&gt;&lt;sys_script_email action="INSERT_OR_UPDATE"&gt;&lt;name/&gt;&lt;new_lines_to_html&gt;false&lt;/new_lines_to_html&gt;&lt;script&gt;&lt;![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+          // Add your code here
+	
+	var today = new GlideDateTime();
+	var overDueTasks = new GlideRecord('x_58872_needit_needit_task');
+	overDueTasks.addQuery('due_date','&lt;', today);
+	overDueTasks.addQuery('state','!=', 3);
+	overDueTasks.addQuery('assigned_to',current.assigned_to);
+	overDueTasks.query();
+	if(overDueTasks.getRowCount() &lt;= 1) {
+	template.print('Total number of overdue tasks assigned to you are : ' + overDueTasks.getRowCount());
+	}
+
+})(current, template, email, email_action, event);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_email&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-11-15 09:46:20&lt;/sys_created_on&gt;&lt;sys_id&gt;150b10b42fa8601082792e5df699b6f9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_email_150b10b42fa8601082792e5df699b6f9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-11-15 09:46:20&lt;/sys_updated_on&gt;&lt;/sys_script_email&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1260068293</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>74872bd32f50201082792e5df699b64c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-15 09:46:20</sys_created_on>
+        <sys_id>df2b14b42fa8601082792e5df699b600</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>175cb4c5c790000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-15 09:46:20</sys_updated_on>
+        <type>Email Script</type>
+        <update_guid>1b2b14b4c8a86010b08a693c0321a200</update_guid>
+        <update_guid_history>1b2b14b4c8a86010b08a693c0321a200:1260068293</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-15 09:51:34</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_email">sys_script_email</sys_db_object>
+        <sys_id>de6f9ee8da7b48b09f53deb400559110</sys_id>
+        <sys_metadata>150b10b42fa8601082792e5df699b6f9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_script_email_150b10b42fa8601082792e5df699b6f9</sys_update_name>
+        <sys_update_version display_value="sys_script_email_150b10b42fa8601082792e5df699b6f9">df2b14b42fa8601082792e5df699b600</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-15 09:51:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
